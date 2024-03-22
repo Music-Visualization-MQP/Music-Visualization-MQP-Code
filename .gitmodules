@@ -1,0 +1,9 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Music-Visualization-MQP/backend.git
+[submodule "database"]
+	path = database
+	url = https://github.com/Music-Visualization-MQP/database.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Music-Visualization-MQP/frontend.git
