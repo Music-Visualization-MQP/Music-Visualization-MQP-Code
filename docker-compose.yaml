@@ -1,0 +1,22 @@
+services:
+  database:
+    build:
+      context: ./database/
+    env_file:
+      ./database/.env
+    ports:
+      - "3036:3036"
+    volumes:
+      - MQP:/data/database
+
+  backend:
+    build:
+      context: ./backend/
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - MQP:/data/backend
+volumes:
+  MQP:
