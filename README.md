@@ -30,57 +30,89 @@ so many reasons for the apps to fail to communicate
   * the system must implement typing in some way
   * the system might benefit from minimal boilerplate
   * the system must use abstraction sparingly and only where nescicary
-  * the system should be performant for 100 + users
-  * the system should have tests which are easy to implement
-  * the system should outsource authentication
+  * the system should support 100 + concurrent users
+    * the system should have automated test cases to support this
+  * the system should    have tests
+  * the system should outsource authentication as much as possible
+  * users must be able to login with password or using a gmail, github, or spotify account
+  * the system should work with more than just spotify
+    * apple music, yt music, tidal...
 
-* **GO**
-  * the more I read the less I want to deal with it
-  * the idea of moving away from java is to improve the dev experience
 
-* **NodeJS**
-  * **Frameworks**
-    * **NestJS**
-      * seems pretty similar to spring which is both good and bad
-        * boilerplate
-        * schema? of controllers, providers, middleware, etc.
-        * people say its like writing java (mmmmmmmm, no thanks)
-    * **TypeORM**
-      *
-    * **FoalTS**
-      * Less boilerplate, documentation is a bit more confusing but the code is easier to read, imo
-      * "Controllers are the front door of your application. They intercept all incoming requests and return the responses to the client."
-      * Not exactly what I think im looking for
-    * **Adonis**
-      * javascript first framework, i don't really feel like figuring out how to cram ts down its throat
-      * looks really similar to nest js, too much boilerplate for me
-    * **Prisma**
-      * simple and no nonsense, seeming
-      * easy to create custom db objects, might be ideal for dealing with our db and then the musicbrainz db
-      *
+* **questions**
+  * should the database where user information is stored be different from the database where user data is stored be different?
+
+* **Backend Language and Frameworks**
+  * **GO**
+    * the more I read the less I want to deal with it
+    * the idea of moving away from java is to improve the dev experience
+
+  * **NodeJS**
+    * **Frameworks**
+      * **NestJS**
+        * seems pretty similar to spring which is both good and bad
+          * boilerplate
+          * schema? of controllers, providers, middleware, etc.
+          * people say its like writing java (mmmmmmmm, no thanks)
+      * **TypeORM**
+        *
+      * **FoalTS**
+        * Less boilerplate, documentation is a bit more confusing but the code is easier to read, imo
+        * "Controllers are the front door of your application. They intercept all incoming requests and return the responses to the client."
+        * Not exactly what I think im looking for
+      * **Adonis**
+        * javascript first framework, i don't really feel like figuring out how to cram ts down its throat
+        * looks really similar to nest js, too much boilerplate for me
+      * **Prisma**
+        * simple and no nonsense, seeming
+        * easy to create custom db objects, might be ideal for dealing with our db and then the musicbrainz db
+        *
     * **Compiling ts to js**
       * just writing vanilla typescript and running it under node
         * no boilerplate or frameworks to become familiar with
         * some framework like express
-      * not as easy to scale, though
-  * **Load balancing**
-    * if we really want to support many users a load balancer would be needed
-      * nest has support for it, i don't care
-      * node actually has support for it
-    * load balancing with mongodb seems easier than with mysql
-      * after webware, i have really fallen for mongo, it's so easy to work with
-  
+      * 
+* **Load balancing**
+  * if we really want to support many users a load balancer would be needed
+    * nest has support for it, i don't care
+    * node actually has support for it
+  * load balancing with mongodb seems easier than with mysql
+    * after webware, i have really fallen for mongo, it's so easy to work with
+
 * **architecture**
   * ci/cd
-    * would be great for getting software in testers hands
+    * would be great for getting app in testers hands
   * microservice philosiphy might apply well here
     * web api
     * musicbrainz
     * data aquisition
+  * docker
 
+* **auth**
+  * use a 3rd party auth provider like auth0 from okta
+    * oauth2 support, login with a profile
+  * there is no need to be any kind of identity provider
+    * an identity provider is essentially a single sign on
+  * **keycloak**
+    * cannot use nosql databases like mongo
+    * self hosted
+    * 
+  * **GLUU**
+    * requires relational database
+    * powerfull, maybe even a little more than what this project requires
+    *
+  * **Firebase**
+
+    * paid service
+  * **Supabase**
+    * supposedly an open source alternative to 
+    * easy to get up and running using docker
+    * uses a postgresql database
+    * has auth functionality built in
+    * has buckets (could be used for local storage of data)
 * **the front runners**
   * Prisma
-  * minimal framework, like express
+    * minimal framework, like express
 
 ## Sources
 
