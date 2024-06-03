@@ -10,3 +10,6 @@
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/Music-Visualization-MQP/frontend.git
+[submodule "supabase"]
+	path = supabase
+	url = https://github.com/Music-Visualization-MQP/supabase.git

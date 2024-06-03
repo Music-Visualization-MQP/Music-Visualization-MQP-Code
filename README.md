@@ -24,19 +24,43 @@ so many reasons for the apps to fail to communicate
 ### The path forward
 
 * **affirmations**
-  * the system must have a simple dev experience
-    * portability and ease of deployment
-  * the system should be designed in such a way that each contributer has a defined task which interferes with other's work as little as possible
-  * the system must implement typing in some way
-  * the system might benefit from minimal boilerplate
-  * the system must use abstraction sparingly and only where nescicary
-  * the system should support 100 + concurrent users
-    * the system should have automated test cases to support this
-  * the system should    have tests
-  * the system should outsource authentication as much as possible
-  * users must be able to login with password or using a gmail, github, or spotify account
-  * the system should work with more than just spotify
-    * apple music, yt music, tidal...
+    * **Collaboration**
+      * the system must have a simple dev experience
+        * portability and ease of deployment
+      * the system should be designed in such a way that each contributer has a defined task which interferes with other's work as little as possible
+      * each commit that isn't fixing some wierd github issue should have a short and informative information about what the contribution does
+      * sources used should be put in a format easily added to a citation manager like zotero
+        * a link or isbn
+      * each collaborator should setup a github education account to get access to github copilot for free
+      * 
+    * **Architecture**
+      * The system should be easily deployed on any given machine
+        * docker/kubernetes
+      * the system might be able to scale autonomously
+      * the system should have a dev and production branches
+      * 
+    * **Features**
+      * users must be able to login with password or using a gmail, github, or spotify account
+      * the system should work with more than just spotify
+        * apple music, yt music, tidal...
+      * the system might work with multiple different kinds of media
+        * youtube, podcasts, movies, books
+      * the system should have a way of manually entering a piece of media that has been experienced
+      * the system should support 100 + concurrent users
+    * **Testing**
+      * the system must have automated test cases to support a reasonable amount of users
+      * the system should  have multiple test cases for any exposed function
+    * **Documentation**
+      * if a functions purpose is not clear a comment must be included which explains it's inputs and outputs
+      * all group members should be responsible for vetting and letting each other know where documentation is lacking
+      * 
+    * **Implementation**
+      * the code must implement typing in some way
+      * the system might benefit from minimal boilerplate
+      * the system must use abstraction sparingly and only where nescicary
+      * the system should comprehensive have tests
+      * the system should outsource authentication as much as possible
+      * the system should have a well designed database schema
 
 
 * **questions**
