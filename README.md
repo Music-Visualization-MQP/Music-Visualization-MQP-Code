@@ -37,8 +37,9 @@ so many reasons for the apps to fail to communicate
       * The system should be easily deployed on any given machine
         * docker/kubernetes
       * the system might be able to scale autonomously
-      * the system should have a dev and production branches
-      * 
+      * the system should have dev and production branches
+      * The system should have robust logging
+      * the system should utilize functional programming whenever possible
     * **Features**
       * users must be able to login with password or using a gmail, github, or spotify account
       * the system should work with more than just spotify
@@ -50,6 +51,7 @@ so many reasons for the apps to fail to communicate
     * **Testing**
       * the system must have automated test cases to support a reasonable amount of users
       * the system should  have multiple test cases for any exposed function
+      * 
     * **Documentation**
       * if a functions purpose is not clear a comment must be included which explains it's inputs and outputs
       * all group members should be responsible for vetting and letting each other know where documentation is lacking
@@ -137,6 +139,15 @@ so many reasons for the apps to fail to communicate
 * **the front runners**
   * Prisma
     * minimal framework, like express
+
+### 3 jun meeting 
+
+* user studies on what providers to include
+* agile
+* move faster 
+* implement features faster
+* in front of users faster 
+* does it shrink code
 
 ## Sources
 
