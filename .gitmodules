@@ -16,3 +16,6 @@
 [submodule "supabase-frontend"]
 	path = supabase-frontend
 	url = https://github.com/Music-Visualization-MQP/supabase-frontend.git
+[submodule "mb-docker"]
+	path = mb-docker
+	url = https://github.com/metabrainz/musicbrainz-docker.git
