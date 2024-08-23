@@ -1,15 +1,6 @@
-[submodule "backend"]
-	path = backend
-	url = https://github.com/Music-Visualization-MQP/backend.git
-[submodule "database"]
-	path = database
-	url = https://github.com/Music-Visualization-MQP/database.git
 [submodule "new-login-experiment"]
 	path = new-login-experiment
 	url = https://github.com/Music-Visualization-MQP/new-login-experiment.git
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/Music-Visualization-MQP/frontend.git
 [submodule "supabase"]
 	path = supabase
 	url = https://github.com/Music-Visualization-MQP/supabase.git
