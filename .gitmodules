@@ -1,9 +1,6 @@
 [submodule "new-login-experiment"]
 	path = new-login-experiment
 	url = https://github.com/Music-Visualization-MQP/new-login-experiment.git
-[submodule "supabase"]
-	path = supabase
-	url = https://github.com/Music-Visualization-MQP/supabase.git
 [submodule "supabase-frontend"]
 	path = supabase-frontend
 	url = https://github.com/Music-Visualization-MQP/supabase-frontend.git
