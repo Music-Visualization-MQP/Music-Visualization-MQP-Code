@@ -2,7 +2,7 @@
 	path = data-acquisition
 	url = https://github.com/Music-Visualization-MQP/new-login-experiment.git
 [submodule "supabase-frontend"]
-	path = supabase-frontend
+	path = frontend
 	url = https://github.com/Music-Visualization-MQP/supabase-frontend.git
 [submodule "mb-docker"]
 	path = mb-docker
