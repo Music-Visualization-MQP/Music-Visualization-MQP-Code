@@ -9,4 +9,4 @@
 	url = https://github.com/metabrainz/musicbrainz-docker.git
 [submodule "supabase-backend"]
 	path = supabase-backend
-	url = https://github.com/Music-Visualization-MQP/supabase.git
+	url = https://github.com/Music-Visualization-MQP/supabase-cli.git
