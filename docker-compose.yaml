@@ -1,22 +1,59 @@
 services:
-  database:
-    build:
-      context: ./database/
-    env_file:
-      ./database/.env
-    ports:
-      - "3036:3036"
-    volumes:
-      - MQP:/data/database
+  # database:
+  #   build:
+  #     context: ./database/
+  #   env_file:
+  #     ./database/.env
+  #   ports:
+  #     - "3036:3036"
+  #   volumes:
+  #     - MQP:/data/database
 
-  backend:
+  frontend:
     build:
-      context: ./backend/
-    env_file:
-      - .env
-    ports:
-      - "8080:8080"
+      context: ./frontend/
+      target: dev
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend
+          target: /src/
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
     volumes:
-      - MQP:/data/backend
+      - MQP:/data/frontend
+    ports:
+      - "4200:4200"
+    networks:
+      - default
+    # expose:
+    #   - "4200"
+# networks:
+#   frontend:
+#     # Specify driver options
+#     driver: bridge
+#     driver_opts:
+#       com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+#     networks:
+#       - frontnet
+#       - backnet
+# networks:
+#   backnet:
+#   frontnet:
+
+# networks:
+#   default:
+#     driver: bridge
+  # backend:
+  #   build:
+  #     context: ./backend/
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - MQP:/data/backend
 volumes:
   MQP:
