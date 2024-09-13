@@ -1,3 +1,8 @@
+include:
+  #- ./mb-docker/docker-compose.yml
+
+
+  - ./supabase-docker/docker/docker-compose.yml
 services:
   # database:
   #   build:
@@ -8,7 +13,12 @@ services:
   #     - "3036:3036"
   #   volumes:
   #     - MQP:/data/database
-
+  # mb-db:
+  #   extends:
+  #     file: ./mb-docker/docker-compose.yml
+  #     service: db
+  #   ports:
+  #     - "5432:5432"
   frontend:
     build:
       context: ./frontend/
@@ -17,17 +27,28 @@ services:
       watch:
         - action: sync
           path: ./frontend
-          target: /src/
+          target: src/
           ignore:
             - node_modules/
         - action: rebuild
-          path: package.json
+          path: .
     volumes:
       - MQP:/data/frontend
     ports:
       - "4200:4200"
     networks:
       - default
+  data-acquisition:
+    build:
+      context: ./data-acquisition/
+      target: dev
+    volumes:
+      - MQP:/data/data-acquisition
+    ports:
+      - "3000:3000"
+    networks:
+      - default
+
     # expose:
     #   - "4200"
 # networks:
@@ -55,5 +76,8 @@ services:
   #     - "8080:8080"
   #   volumes:
   #     - MQP:/data/backend
+# networks:
+#   default:
+#     driver: bridge
 volumes:
   MQP:

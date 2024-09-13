@@ -10,3 +10,6 @@
 [submodule "supabase-backend"]
 	path = supabase-backend
 	url = https://github.com/Music-Visualization-MQP/supabase-cli.git
+[submodule "supabase-docker"]
+	path = supabase-docker
+	url = https://github.com/Music-Visualization-MQP/supabase-docker.git
