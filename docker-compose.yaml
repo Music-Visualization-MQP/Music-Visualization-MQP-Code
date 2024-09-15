@@ -26,7 +26,7 @@ services:
     develop:
       watch:
         - action: sync
-          path: ./frontend
+          path: ./frontend/
           target: src/
           ignore:
             - node_modules/
@@ -48,6 +48,11 @@ services:
       - "3000:3000"
     networks:
       - default
+    # depends_on:
+    #   - supabase-docker
+    
+
+
 
     # expose:
     #   - "4200"
