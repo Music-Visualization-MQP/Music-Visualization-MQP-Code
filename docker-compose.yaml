@@ -48,6 +48,15 @@ services:
       - "3001:3001"
     networks:
       - default
+    develop:
+      watch:
+        - action: sync
+          path: ./data-acquisition/
+          target: src/
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: .
     depends_on:
       supabase-db:
         # Disable this if you are using an external Postgres database
