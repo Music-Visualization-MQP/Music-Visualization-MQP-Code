@@ -4,34 +4,10 @@ include:
 
   - ./supabase-docker/docker/docker-compose.yml
 services:
-  # database:
-  #   build:
-  #     context: ./database/
-  #   env_file:
-  #     ./database/.env
-  #   ports:
-  #     - "3036:3036"
-  #   volumes:
-  #     - MQP:/data/database
-  # mb-db:
-  #   extends:
-  #     file: ./mb-docker/docker-compose.yml
-  #     service: db
-  #   ports:
-  #     - "5432:5432"
   frontend:
     build:
       context: ./frontend/
-      target: dev
-    develop:
-      watch:
-        - action: sync
-          path: ./frontend/
-          target: src/
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: .
+      target: prod
     volumes:
       - MQP:/data/frontend
     ports:
@@ -41,7 +17,7 @@ services:
   data-acquisition:
     build:
       context: ./data-acquisition/
-      target: dev
+      target: prod
     volumes:
       - MQP:/data/data-acquisition
     ports:
