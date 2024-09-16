@@ -45,11 +45,28 @@ services:
     volumes:
       - MQP:/data/data-acquisition
     ports:
-      - "3000:3000"
+      - "3001:3001"
     networks:
       - default
-    # depends_on:
-    #   - supabase-docker
+    depends_on:
+      supabase-db:
+        # Disable this if you are using an external Postgres database
+        condition: service_healthy
+      analytics:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://localhost:3000/api/profile', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+        ]
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    restart: on-failure
+    
     
 
 
