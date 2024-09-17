@@ -35,7 +35,7 @@ services:
     volumes:
       - MQP:/data/frontend
     ports:
-      - "4200:4200"
+      - "5173:5173"
     networks:
       - default
   data-acquisition:
