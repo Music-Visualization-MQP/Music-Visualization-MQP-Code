@@ -3,6 +3,7 @@ include:
 
 
   - ./supabase-docker/docker/docker-compose.yml
+  - ./frontend/docker-compose.yaml
 services:
   # database:
   #   build:
@@ -19,25 +20,6 @@ services:
   #     service: db
   #   ports:
   #     - "5432:5432"
-  frontend:
-    build:
-      context: ./frontend/
-      target: dev
-    develop:
-      watch:
-        - action: sync
-          path: ./frontend/
-          target: src/
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: .
-    volumes:
-      - MQP:/data/frontend
-    ports:
-      - "4200:4200"
-    networks:
-      - default
   data-acquisition:
     build:
       context: ./data-acquisition/
